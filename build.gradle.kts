@@ -15,8 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.Vincent200355:AirportAgentSimulation-Base:master-SNAPSHOT")
-    testImplementation(kotlin("test"))
+    implementation("com.github.Vincent200355:AirportAgentSimulation-Base:-SNAPSHOT")
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,0 +1,4 @@
+id          = UniqueExamplePluginID
+name        = ExamplePluginName
+authors     = Cheatahh, ...
+entrypoint  = ExamplePlugin
