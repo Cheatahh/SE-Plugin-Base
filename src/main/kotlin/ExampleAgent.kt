@@ -30,7 +30,6 @@ class ExampleAgent : Agent() {
 
     }
 
-
     companion object {
         const val TYPE_ID = "ExampleAgent"
     }
