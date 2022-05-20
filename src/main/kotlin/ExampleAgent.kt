@@ -5,12 +5,10 @@ import kotlin.math.min
 //carries an explosive to kill nearby entities
 class ExampleAgent : Agent() {
 
-    private val explosionRange = min(world.width, world.height) * .1
+    private val explosionRadius = min(world.width, world.height) * .1
     private var explosionTriggered = false
 
     init {
-        //waiting in the center of our world
-        spawn(world, world.width / 2, world.height / 2, 1, 1)
         speed = .0
     }
 
@@ -18,10 +16,10 @@ class ExampleAgent : Agent() {
 
         if(!explosionTriggered) {
             val entitiesInRadius = world.entities.filter {
-                position .. it.position < explosionRange
+                position .. it.position < explosionRadius
             }
 
-            //explosion is triggered if 10% of all entities in radius
+            //explosion is triggered if at least 10% of all entities are in the explosion radius
             if(entitiesInRadius.count() < world.entities.count() / 10) return
             explosionTriggered = true
 
