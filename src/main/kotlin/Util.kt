@@ -1,11 +1,8 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.geometry.Point
+import java.awt.geom.Point2D
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-infix operator fun Point.rangeTo(other: Point) : Double {
-
-    val dx = abs(x - other.x)
-    val dy = abs(y - other.y)
-
-    return sqrt((dx * dx + dy * dy).toDouble())
-}
+inline infix operator fun Point.rangeTo(other: Point) = Point2D.distance(x.toDouble(), y.toDouble(), other.x.toDouble(), other.y.toDouble())
