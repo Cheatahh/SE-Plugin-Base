@@ -9,13 +9,10 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    maven {
-        setUrl("https://jitpack.io")
-    }
 }
 
 dependencies {
-    implementation("com.github.Vincent200355:AirportAgentSimulation-Base:-SNAPSHOT")
+    implementation(files("lib/airportargentsim.jar"))
 }
 
 tasks.withType<KotlinCompile> {

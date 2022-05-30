@@ -6,8 +6,6 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.P
 class ExamplePlugin : Plugin {
 
     override fun activate() {
-        println("[${javaClass.simpleName}] Hello World!")
-
         try {
             AirportAgentSimulation.registerEntity(this, ExampleAgent.TYPE_ID, ExampleAgent::class.java, arrayOf(
                 ConfigurableAttribute("x-pos", Int::class.java), //TODO attribute naming

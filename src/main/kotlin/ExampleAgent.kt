@@ -1,14 +1,18 @@
+import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.geometry.Point
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.entity.Agent
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.entity.Entity
 import kotlin.math.min
 
 //carries an explosive to kill nearby entities
-class ExampleAgent : Agent() {
+class ExampleAgent(x: Int, y: Int, w: Int, h: Int) : Agent() {
 
     private val explosionRadius = min(world.width, world.height) * .1
     private var explosionTriggered = false
 
     init {
+        position = Point(x, y)
+        width = w
+        height = h
         speed = .0
     }
 
@@ -24,6 +28,7 @@ class ExampleAgent : Agent() {
             explosionTriggered = true
 
             entitiesInRadius.forEach(Entity::kill)
+
         }
 
     }
